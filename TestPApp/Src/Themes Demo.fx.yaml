@@ -1,0 +1,677 @@
+"'Themes Demo' As screen":
+    Fill: =defaults.elementBackgroundColor
+
+    Container1 As groupContainer.horizontalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutGap: =20
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =20
+        PaddingLeft: =20
+        PaddingRight: =20
+        PaddingTop: =20
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Container2 As groupContainer.verticalAutoLayoutContainer:
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =20
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =1
+
+            Container3 As groupContainer.manualLayoutContainer:
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =1
+
+                Button6_4 As button:
+                    BorderStyle: =BorderStyle.None
+                    DisabledFill: =defaults.backgroundColor
+                    DisplayMode: =DisplayMode.Disabled
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    Height: =Parent.Height
+                    Text: =
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                Container4 As groupContainer.verticalAutoLayoutContainer:
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingTop: =20
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    Label3 As label:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Bold
+                        Height: =53
+                        Size: =defaults.fontSize+4
+                        Text: ="Change Scheme"
+                        Width: =640
+                        Y: =18
+                        ZIndex: =1
+
+                    Gallery1 As gallery.galleryVertical:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Fill: =Color.Transparent
+                        Height: =404
+                        Items: |-
+                            =Table(
+                                {
+                                    primaryColor: ColorValue("#6200EE"),
+                                    secondaryColor: ColorValue("#03DAC6"),
+                                    disabledColor: Color.Gray,
+                                    backgroundColor: Color.White,
+                                    elementBackgroundColor: RGBA(240, 240, 240, 1),
+                                    textColor: RGBA(30, 30, 30, 1),
+                                    errorColor: Color.Red,
+                                    font: "Roboto, 'Segoe UI'",
+                                    fontSize: 14,
+                                    borderRadius: 10,
+                                    borderColor: ColorValue("#6200EE"),
+                                    inputFill: RGBA(240, 240, 240, 1),
+                                    inputBorderThickness: 1
+                                },
+                                {
+                                    primaryColor: Color.DarkGreen,
+                                    secondaryColor: Color.Brown,
+                                    disabledColor: Color.Gray,
+                                    backgroundColor: Color.White,
+                                    elementBackgroundColor: RGBA(240, 240, 240, 1),
+                                    textColor: Color.Black,
+                                    errorColor: Color.Red,
+                                    font: "'Segoe UI'",
+                                    fontSize: 16,
+                                    borderRadius: 0,
+                                    borderColor: Color.Black,
+                                    inputFill: Color.White,
+                                    inputBorderThickness: 1
+                                },
+                                {
+                                    primaryColor: ColorFade(Color.Purple, 80%),
+                                    secondaryColor: Color.LightGreen,
+                                    disabledColor: Color.Gray,
+                                    backgroundColor: RGBA(30, 30, 30, 1),
+                                    elementBackgroundColor: RGBA(70, 70, 70, 1),
+                                    textColor: RGBA(250, 250, 250, 1),
+                                    errorColor: Color.Red,
+                                    font: "Arial",
+                                    fontSize: 14,
+                                    borderRadius: 10,
+                                    borderColor: Color.Transparent,
+                                    inputFill: RGBA(70, 70, 70, 1),
+                                    inputBorderThickness: 0
+                                },
+                                {
+                                    primaryColor: RGBA(0,0,155,1),
+                                    secondaryColor: RGBA(255,155,0,1),
+                                    disabledColor: Color.Gray,
+                                    backgroundColor: Color.White,
+                                    elementBackgroundColor: RGBA(240, 240, 240, 1),
+                                    textColor: RGBA(30, 30, 30, 1),
+                                    errorColor: Color.Red,
+                                    font: "Bahnschrift",
+                                    fontSize: 14,
+                                    borderRadius: 50,
+                                    borderColor: Color.Transparent,
+                                    inputFill: RGBA(240, 240, 240, 1),
+                                    inputBorderThickness: 0
+                                },
+                                {
+                                    primaryColor: RGBA(255,155,0,1),
+                                    secondaryColor: RGBA(0,0,155,1),
+                                    disabledColor: Color.Gray,
+                                    backgroundColor: Color.White,
+                                    elementBackgroundColor: RGBA(220, 220, 220, 1),
+                                    textColor: RGBA(30, 30, 30, 1),
+                                    errorColor: Color.Red,
+                                    font: "Bahnschrift",
+                                    fontSize: 14,
+                                    borderRadius: 50,
+                                    borderColor: Color.Transparent,
+                                    inputFill: RGBA(220, 220, 220, 1),
+                                    inputBorderThickness: 0
+                                }
+                            )    
+                        Layout: =Layout.Vertical
+                        LayoutMinHeight: =287
+                        LayoutMinWidth: =320
+                        TemplateFill: =ThisItem.backgroundColor
+                        Y: =45
+                        ZIndex: =2
+
+                        Button4 As button:
+                            BorderColor: =Self.Fill
+                            Color: =ThisItem.backgroundColor
+                            Fill: =ThisItem.primaryColor
+                            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                            Font: =ThisItem.font
+                            HoverFill: =ColorFade(Self.Fill, 30%)
+                            OnSelect: |-
+                                =Set(defaults,
+                                    {
+                                        primaryColor: ThisItem.primaryColor,
+                                        secondaryColor: ThisItem.secondaryColor,
+                                        disabledColor: Color.Gray,
+                                        backgroundColor: ThisItem.backgroundColor,
+                                        elementBackgroundColor: ThisItem.elementBackgroundColor,
+                                        textColor: ThisItem.textColor,
+                                        errorColor: Color.Red,
+                                        font: ThisItem.font,
+                                        fontSize: ThisItem.fontSize,
+                                        borderRadius: ThisItem.borderRadius,
+                                        borderColor: ThisItem.borderColor,
+                                        inputFill: ThisItem.inputFill,
+                                        inputBorderThickness: ThisItem.inputBorderThickness
+                                    }
+                                );
+                                
+                                
+                                Set(defaults,
+                                    Patch(defaults,
+                                    {
+                                        primaryColorHex: Match(JSON(defaults.primaryColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                                        primaryColorTransparentHex: Match(JSON(defaults.primaryColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch&"4d",
+                                        secondaryColorHex: Match(JSON(defaults.secondaryColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                                        disabledColorHex: Match(JSON(defaults.disabledColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                                        backgroundColorHex: Match(JSON(defaults.backgroundColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                                        elementBackgroundColorHex: Match(JSON(defaults.elementBackgroundColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                                        errorColorHex: Match(JSON(defaults.errorColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                                        textColorHex: Match(JSON(defaults.textColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch
+                                    }
+                                    )
+                                );
+                            RadiusBottomLeft: =ThisItem.borderRadius
+                            RadiusBottomRight: =ThisItem.borderRadius
+                            RadiusTopLeft: =ThisItem.borderRadius
+                            RadiusTopRight: =ThisItem.borderRadius
+                            Size: =ThisItem.fontSize+6
+                            Text: ="Button"
+                            X: =192
+                            Y: =15
+                            ZIndex: =1
+
+        Container2_1 As groupContainer.verticalAutoLayoutContainer:
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =20
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            Container3_2 As groupContainer.manualLayoutContainer:
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =1
+
+                Button6_6 As button:
+                    BorderStyle: =BorderStyle.None
+                    DisabledFill: =defaults.backgroundColor
+                    DisplayMode: =DisplayMode.Disabled
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    Height: =Parent.Height
+                    Text: =
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                Container5 As groupContainer.horizontalAutoLayoutContainer:
+                    Height: =Parent.Height
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    Container6 As groupContainer.horizontalAutoLayoutContainer:
+                        Height: =Parent.Height
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =40
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =1
+
+                        Radio1_1 As radio:
+                            Height: =188
+                            Items: =DropDownSample
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =160
+                            Width: =259
+                            X: =259
+                            Y: =85
+                            ZIndex: =1
+
+                        Checkbox1_1 As checkbox:
+                            Text: ="Option"
+                            X: =259
+                            Y: =582
+                            ZIndex: =2
+
+                    Container6_1 As groupContainer.horizontalAutoLayoutContainer:
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =30
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =2
+
+                        DatePicker2_1 As datepicker:
+                            LayoutMinWidth: =328
+                            X: =551
+                            Y: =157
+                            ZIndex: =1
+
+                        Dropdown2_1 As dropdown:
+                            Items: =DropDownSample
+                            LayoutMinWidth: =328
+                            X: =551
+                            Y: =222
+                            ZIndex: =2
+
+                        TextInput2_1 As text:
+                            Default: ="Text input"
+                            X: =551
+                            Y: =92
+                            ZIndex: =3
+
+                        Button1_1 As button:
+                            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                            LayoutMinHeight: =40
+                            LayoutMinWidth: =160
+                            Text: ="Button"
+                            X: =8
+                            Y: =593
+                            ZIndex: =4
+
+            Container3_3 As groupContainer.manualLayoutContainer:
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =2
+
+                Button6_7 As button:
+                    BorderStyle: =BorderStyle.None
+                    DisabledFill: =defaults.backgroundColor
+                    DisplayMode: =DisplayMode.Disabled
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    Height: =Parent.Height
+                    Text: =
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                Container5_1 As groupContainer.horizontalAutoLayoutContainer:
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    Container6_2 As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =0
+                        Height: |
+                            =80
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutGap: =40
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =1
+
+                        Icon4_6 As icon.FilterFlatFilled:
+                            Icon: =Icon.Cancel
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+                            X: =144
+                            Y: =613
+                            ZIndex: =1
+
+                        Icon3_1 As icon.Edit:
+                            Icon: =Icon.Edit
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+                            X: =1413
+                            Y: =613
+                            ZIndex: =2
+
+                        Icon4_5 As icon.FilterFlatFilled:
+                            Icon: =Icon.FilterFlatFilled
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+                            X: =67
+                            Y: =613
+                            ZIndex: =3
+
+                        Icon4_7 As icon.FilterFlatFilled:
+                            Icon: =Icon.Check
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+                            X: =202
+                            Y: =4
+                            ZIndex: =4
+
+                        Icon4_8 As icon.FilterFlatFilled:
+                            Icon: =Icon.Trash
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+                            X: =265
+                            Y: =4
+                            ZIndex: =5
+
+                        Icon4_9 As icon.FilterFlatFilled:
+                            Icon: =Icon.Person
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+                            X: =325
+                            Y: =4
+                            ZIndex: =6
+
+                    Container6_3 As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =0
+                        Height: |
+                            =80
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutGap: =20
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =2
+
+                        Image4_15 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="close", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.primaryColorHex&"' ", svg)
+                                )
+                                )
+                            Width: =60
+                            X: =144
+                            Y: =665
+                            ZIndex: =1
+
+                        Image4_16 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="pencil-outline", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.primaryColorHex&"' ", svg)
+                                )
+                                )
+                            Width: =60
+                            X: =1413
+                            Y: =665
+                            ZIndex: =2
+
+                        Image4_17 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="filter", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.primaryColorHex&"' ", svg)
+                                )
+                                )
+                            Width: =60
+                            X: =67
+                            Y: =665
+                            ZIndex: =3
+
+                        Image4_18 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="check", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.primaryColorHex&"' ", svg)
+                                )
+                                )
+                            Width: =60
+                            X: =202
+                            Y: =665
+                            ZIndex: =4
+
+                        Image4_19 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="delete-outline", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.primaryColorHex&"' ", svg)
+                                )
+                                )
+                            Width: =60
+                            X: =265
+                            Y: =665
+                            ZIndex: =5
+
+                        Image4_20 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="account", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.primaryColorHex&"' ", svg)
+                                )
+                                )
+                            Width: =60
+                            X: =325
+                            Y: =665
+                            ZIndex: =6
+
+                    Container6_4 As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =0
+                        Height: |
+                            =80
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutGap: =20
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =3
+
+                        Image4_21 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Fill: =defaults.secondaryColor
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="close", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.backgroundColorHex&"' ", svg)
+                                )
+                                )
+                            PaddingBottom: =10
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            PaddingTop: =10
+                            RadiusBottomLeft: =defaults.borderRadius
+                            RadiusBottomRight: =defaults.borderRadius
+                            RadiusTopLeft: =defaults.borderRadius
+                            RadiusTopRight: =defaults.borderRadius
+                            Width: =60
+                            X: =144
+                            Y: =721
+                            ZIndex: =1
+
+                        Image4_22 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Fill: =defaults.secondaryColor
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="pencil-outline", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.backgroundColorHex&"' ", svg)
+                                )
+                                )
+                            PaddingBottom: =10
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            PaddingTop: =10
+                            RadiusBottomLeft: =defaults.borderRadius
+                            RadiusBottomRight: =defaults.borderRadius
+                            RadiusTopLeft: =defaults.borderRadius
+                            RadiusTopRight: =defaults.borderRadius
+                            Width: =60
+                            X: =1394
+                            Y: =721
+                            ZIndex: =2
+
+                        Image4_23 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Fill: =defaults.secondaryColor
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="filter", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.backgroundColorHex&"' ", svg)
+                                )
+                                )
+                            PaddingBottom: =10
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            PaddingTop: =10
+                            RadiusBottomLeft: =defaults.borderRadius
+                            RadiusBottomRight: =defaults.borderRadius
+                            RadiusTopLeft: =defaults.borderRadius
+                            RadiusTopRight: =defaults.borderRadius
+                            Width: =60
+                            X: =67
+                            Y: =721
+                            ZIndex: =3
+
+                        Image4_24 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Fill: =defaults.secondaryColor
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="check", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.backgroundColorHex&"' ", svg)
+                                )
+                                )
+                            PaddingBottom: =10
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            PaddingTop: =10
+                            RadiusBottomLeft: =defaults.borderRadius
+                            RadiusBottomRight: =defaults.borderRadius
+                            RadiusTopLeft: =defaults.borderRadius
+                            RadiusTopRight: =defaults.borderRadius
+                            Width: =60
+                            X: =211
+                            Y: =721
+                            ZIndex: =4
+
+                        Image4_25 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Fill: =defaults.secondaryColor
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="delete-outline", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.backgroundColorHex&"' ", svg)
+                                )
+                                )
+                            PaddingBottom: =10
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            PaddingTop: =10
+                            RadiusBottomLeft: =defaults.borderRadius
+                            RadiusBottomRight: =defaults.borderRadius
+                            RadiusTopLeft: =defaults.borderRadius
+                            RadiusTopRight: =defaults.borderRadius
+                            Width: =60
+                            X: =283
+                            Y: =721
+                            ZIndex: =5
+
+                        Image4_26 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Fill: =defaults.secondaryColor
+                            Height: =60
+                            Image: |-
+                                =With({svg: LookUp(MaterialDesignIcons, name="account", svgPath)},
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(svg, "<svg ", "<svg fill='"&defaults.backgroundColorHex&"' ", svg)
+                                )
+                                )
+                            PaddingBottom: =10
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            PaddingTop: =10
+                            RadiusBottomLeft: =defaults.borderRadius
+                            RadiusBottomRight: =defaults.borderRadius
+                            RadiusTopLeft: =defaults.borderRadius
+                            RadiusTopRight: =defaults.borderRadius
+                            Width: =60
+                            X: =352
+                            Y: =721
+                            ZIndex: =6
+
+    "CommandBar1 As 'Fluent Command Bar (1.0.8)'.pcfdataset":
+        DisplayMode: =DisplayMode.Edit
+        Height: =200
+        Items: =["A","B"]
+        Width: =200
+        X: =40
+        Y: =40
+        ZIndex: =2
+
+        Value1 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Value"
+            FieldName: ="Value"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =1
+            ZIndex: =7
+

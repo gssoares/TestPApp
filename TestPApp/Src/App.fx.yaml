@@ -1,0 +1,54 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =//define styling here
+        
+        Set(defaults,
+            {
+                primaryColor: ColorValue("#6200EE"),
+                secondaryColor: ColorValue("#03DAC6"),
+                disabledColor: Color.Gray,
+                backgroundColor: Color.White,
+                elementBackgroundColor: RGBA(240, 240, 240, 1),
+                textColor: RGBA(0, 0, 0, 1),
+                errorColor: ColorValue("#B00020"),
+                font: "Roboto, 'Segoe UI'",
+                fontSize: 12,
+                borderRadius: 5,
+                borderColor: Color.Transparent,
+                inputFill: RGBA(240, 240, 240, 1),
+                inputBorderThickness: 0
+            }
+        );
+        
+        Set(defaults,
+            Patch(defaults,
+            {
+                primaryColorHex: Match(JSON(defaults.primaryColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                primaryColorTransparentHex: Match(JSON(defaults.primaryColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch&"4d",
+                secondaryColorHex: Match(JSON(defaults.secondaryColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                disabledColorHex: Match(JSON(defaults.disabledColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                backgroundColorHex: Match(JSON(defaults.backgroundColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                errorColorHex: Match(JSON(defaults.errorColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                elementBackgroundColorHex: Match(JSON(defaults.elementBackgroundColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch,
+                textColorHex: Match(JSON(defaults.primaryColor,JSONFormat.IgnoreUnsupportedTypes),"#[a-fA-F0-9]{6}").FullMatch
+            }
+            )
+        );
+        
+        //your own OnStart-code starts here
+    StartScreen: |-
+        =//Example query Parameter for a different start screen
+        Switch(
+            Param("screen"),
+            "icons", Icons,
+            "themes", 'Themes Demo',
+            New)
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

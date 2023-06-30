@@ -1,0 +1,15 @@
+{
+  "components": [
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.CommandBar",
+      "IdentifierType": 0
+    }
+  ],
+  "instanceUrl": "https://org579254cf.crm4.dynamics.com/",
+  "state": "Configured",
+  "webApiVersion": "v9.0"
+}

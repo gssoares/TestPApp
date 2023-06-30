@@ -1,0 +1,8 @@
+New As screen:
+
+    btnTest As button:
+        Text: ="Button"
+        X: =40
+        Y: =40
+        ZIndex: =3
+
