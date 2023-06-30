@@ -1,6 +1,6 @@
 New As screen:
 
-    Button1 As button:
+    btnTest As button:
         Text: ="Button"
         X: =40
         Y: =40
