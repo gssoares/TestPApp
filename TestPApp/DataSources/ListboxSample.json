@@ -1,0 +1,15 @@
+[
+  {
+    "Data": "[{\"Value\":\"Power Apps\"},{\"Value\":\"Power Automate\"},{\"Value\":\"Power Pages\"},{\"Value\":\"Power BI\"},{\"Value\":\"Power Virtual Agents\"}]",
+    "IsSampleData": true,
+    "IsWritable": false,
+    "Name": "ListboxSample",
+    "OrderedColumnNames": [
+      "Value"
+    ],
+    "OriginalName": "ListboxSample",
+    "OriginalSchema": "*[Value:s]",
+    "Schema": "*[Value:s]",
+    "Type": "StaticDataSourceInfo"
+  }
+]

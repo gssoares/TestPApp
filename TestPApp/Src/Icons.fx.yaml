@@ -1,0 +1,384 @@
+Icons As screen:
+    Fill: =defaults.elementBackgroundColor
+
+    Container3_4 As groupContainer.horizontalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutGap: =20
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =20
+        PaddingLeft: =20
+        PaddingRight: =20
+        PaddingTop: =20
+        Width: =Parent.Width
+        ZIndex: =9
+
+        Container5_2 As groupContainer.verticalAutoLayoutContainer:
+            FillPortions: =2
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =20
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            Container2_8 As groupContainer.manualLayoutContainer:
+                FillPortions: =4
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =1
+
+                btn_background_8 As button:
+                    BorderThickness: =0
+                    DisabledFill: =defaults.backgroundColor
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =Parent.Height
+                    TabIndex: =-1
+                    Text: =""
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                Container21 As groupContainer.verticalAutoLayoutContainer:
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =20
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =20
+                    PaddingLeft: =20
+                    PaddingRight: =20
+                    PaddingTop: =30
+                    Width: =Parent.Width
+                    ZIndex: =4
+
+                    TextInput1 As text:
+                        Default: =""
+                        HintText: ="Search for Icon"
+                        Reset: =true
+                        X: =306
+                        Y: =62
+                        ZIndex: =1
+
+                    gal_Icons_1 As gallery.galleryVertical:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Fill: =defaults.elementBackgroundColor
+                        Height: =653
+                        Items: =Filter(MaterialDesignIcons, TextInput1.Text in name)
+                        Layout: =Layout.Vertical
+                        LayoutMinHeight: =287
+                        LayoutMinWidth: =320
+                        TemplateFill: =If(ThisItem.IsSelected, ColorValue(defaults.primaryColorHex&"22"))
+                        TemplateSize: =60
+                        X: =40
+                        Y: =115
+                        ZIndex: =2
+
+                        Container23 As groupContainer.horizontalAutoLayoutContainer:
+                            Height: =60
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =20
+                            PaddingRight: =40
+                            Width: =Parent.TemplateWidth
+                            ZIndex: =3
+
+                            Label5_2 As label:
+                                Color: =If(ThisItem.IsSelected, defaults.primaryColor, defaults.textColor)
+                                FillPortions: =1
+                                Height: =46
+                                Text: =ThisItem.name
+                                Width: =476
+                                X: =1
+                                Y: =4
+                                ZIndex: =1
+
+                            Image4_3 As image:
+                                BorderColor: =Color.Transparent
+                                DisabledBorderColor: =Color.Transparent
+                                DisabledFill: =Color.Transparent
+                                Height: =50
+                                Image: |-
+                                    ="data:image/svg+xml;utf8, " & EncodeUrl(
+                                    //Set Map svg text
+                                    Substitute(ThisItem.svgPath, "<svg ", "<svg fill='"&If(ThisItem.IsSelected, defaults.primaryColorHex, defaults.textColorHex)&"' ", ThisItem.svgPath)
+                                    )
+                                Tooltip: =ThisItem.svgPath
+                                Width: =99
+                                X: =520
+                                Y: =18
+                                ZIndex: =2
+
+        Container6_5 As groupContainer.verticalAutoLayoutContainer:
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =20
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =3
+
+            Container2_13 As groupContainer.manualLayoutContainer:
+                FillPortions: =2
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =1
+
+                btn_background_13 As button:
+                    BorderThickness: =0
+                    DisabledFill: =defaults.backgroundColor
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =Parent.Height
+                    TabIndex: =-1
+                    Text: =""
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                Container22 As groupContainer.verticalAutoLayoutContainer:
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =30
+                    PaddingLeft: =20
+                    PaddingRight: =20
+                    PaddingTop: =20
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    Label14 As label:
+                        Text: ="SVG-code icon """&gal_Icons_1.Selected.name&""""
+                        ZIndex: =1
+
+                    TextInput3 As text:
+                        Default: =gal_Icons_1.Selected.svgPath
+                        FillPortions: =1
+                        Mode: =TextMode.MultiLine
+                        ZIndex: =2
+
+            Container2_14 As groupContainer.manualLayoutContainer:
+                FillPortions: =3
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =2
+
+                btn_background_14 As button:
+                    BorderThickness: =0
+                    DisabledFill: =defaults.backgroundColor
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =Parent.Height
+                    TabIndex: =-1
+                    Text: =""
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                Container22_1 As groupContainer.verticalAutoLayoutContainer:
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =20
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =20
+                    PaddingLeft: =20
+                    PaddingRight: =20
+                    PaddingTop: =20
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    Label14_3 As label:
+                        AutoHeight: =true
+                        Text: ="Examples"
+                        ZIndex: =1
+
+                    Label14_1 As label:
+                        FillPortions: =1
+                        Text: =""
+                        ZIndex: =2
+
+                    Container24 As groupContainer.horizontalAutoLayoutContainer:
+                        FillPortions: =0
+                        Height: =90
+                        LayoutGap: =20
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =3
+
+                        Image4_27 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Height: =30
+                            Image: |
+                                =
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(gal_Icons_1.Selected.svgPath, "<svg ", "<svg fill='"&defaults.primaryColorHex&"' ")
+                                )
+                            Width: =30
+                            X: =19
+                            Y: =665
+                            ZIndex: =1
+
+                        Image4_28 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Height: =50
+                            Image: |
+                                =
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(gal_Icons_1.Selected.svgPath, "<svg ", "<svg fill='"&defaults.primaryColorHex&"' ")
+                                )
+                            Width: =50
+                            X: =19
+                            Y: =665
+                            ZIndex: =3
+
+                        Image4_29 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Height: =70
+                            Image: |
+                                =
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(gal_Icons_1.Selected.svgPath, "<svg ", "<svg fill='"&defaults.primaryColorHex&"' ")
+                                )
+                            Width: =70
+                            X: =19
+                            Y: =665
+                            ZIndex: =4
+
+                        Image4_30 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Height: =90
+                            Image: |
+                                =
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(gal_Icons_1.Selected.svgPath, "<svg ", "<svg fill='"&defaults.primaryColorHex&"' ")
+                                )
+                            Width: =90
+                            X: =19
+                            Y: =665
+                            ZIndex: =5
+
+                    Container24_1 As groupContainer.horizontalAutoLayoutContainer:
+                        FillPortions: =0
+                        Height: =90
+                        LayoutAlignItems: =LayoutAlignItems.End
+                        LayoutGap: =20
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =4
+
+                        Image4_31 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Fill: =defaults.secondaryColor
+                            Height: =90
+                            Image: |
+                                =
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(gal_Icons_1.Selected.svgPath, "<svg ", "<svg fill='"&defaults.backgroundColorHex&"' ")
+                                )
+                            PaddingBottom: =Self.Width*0.1
+                            PaddingLeft: =Self.Width*0.1
+                            PaddingRight: =Self.Width*0.1
+                            PaddingTop: =Self.Width*0.1
+                            RadiusBottomLeft: =defaults.borderRadius
+                            RadiusBottomRight: =defaults.borderRadius
+                            RadiusTopLeft: =defaults.borderRadius
+                            RadiusTopRight: =defaults.borderRadius
+                            Width: =90
+                            X: =19
+                            Y: =665
+                            ZIndex: =1
+
+                        Image4_32 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Fill: =defaults.secondaryColor
+                            Height: =70
+                            Image: |
+                                =
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(gal_Icons_1.Selected.svgPath, "<svg ", "<svg fill='"&defaults.backgroundColorHex&"' ")
+                                )
+                            PaddingBottom: =Self.Width*0.1
+                            PaddingLeft: =Self.Width*0.1
+                            PaddingRight: =Self.Width*0.1
+                            PaddingTop: =Self.Width*0.1
+                            RadiusBottomLeft: =defaults.borderRadius
+                            RadiusBottomRight: =defaults.borderRadius
+                            RadiusTopLeft: =defaults.borderRadius
+                            RadiusTopRight: =defaults.borderRadius
+                            Width: =70
+                            X: =19
+                            Y: =665
+                            ZIndex: =2
+
+                        Image4_33 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Fill: =defaults.secondaryColor
+                            Height: =50
+                            Image: |
+                                =
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(gal_Icons_1.Selected.svgPath, "<svg ", "<svg fill='"&defaults.backgroundColorHex&"' ")
+                                )
+                            PaddingBottom: =Self.Width*0.1
+                            PaddingLeft: =Self.Width*0.1
+                            PaddingRight: =Self.Width*0.1
+                            PaddingTop: =Self.Width*0.1
+                            RadiusBottomLeft: =defaults.borderRadius
+                            RadiusBottomRight: =defaults.borderRadius
+                            RadiusTopLeft: =defaults.borderRadius
+                            RadiusTopRight: =defaults.borderRadius
+                            Width: =50
+                            X: =19
+                            Y: =665
+                            ZIndex: =3
+
+                        Image4_34 As image:
+                            BorderColor: =Color.Transparent
+                            DisabledBorderColor: =Color.Transparent
+                            DisabledFill: =Color.Transparent
+                            Fill: =defaults.secondaryColor
+                            Height: =30
+                            Image: |
+                                =
+                                "data:image/svg+xml;utf8, " & EncodeUrl(
+                                //Set Map svg text
+                                Substitute(gal_Icons_1.Selected.svgPath, "<svg ", "<svg fill='"&defaults.backgroundColorHex&"' ")
+                                )
+                            PaddingBottom: =Self.Width*0.1
+                            PaddingLeft: =Self.Width*0.1
+                            PaddingRight: =Self.Width*0.1
+                            PaddingTop: =Self.Width*0.1
+                            RadiusBottomLeft: =defaults.borderRadius
+                            RadiusBottomRight: =defaults.borderRadius
+                            RadiusTopLeft: =defaults.borderRadius
+                            RadiusTopRight: =defaults.borderRadius
+                            Width: =30
+                            X: =19
+                            Y: =665
+                            ZIndex: =4
+
+                    Label14_4 As label:
+                        FillPortions: =1
+                        Text: =""
+                        ZIndex: =5
+
